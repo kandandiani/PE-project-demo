@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>控制台看js</title>
+</head>
+
+<body>
+
+  <script>
+    var obj = {
+      'name': 'ka~'
+    };
+    var arr = ['1', '2', 'q'];
+
+    function fun(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    var o = new fun('ka~', '24');
+    console.log(Object.prototype.toString.call(obj)); //[Object Object]
+    console.log(Object.prototype.toString.call(arr)); //[object Array]
+    console.log(Object.prototype.toString.call(fun)); //[Object Function]
+    console.log(Object.prototype.toString.call(o)); //[Object Object]
+    console.log(Object.prototype.toString.call(null)); //[Object Null]
+  </script>
+</body>
+
+</html>

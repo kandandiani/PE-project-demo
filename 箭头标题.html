@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三角箭头</title>
+    <style>
+        div{
+            float: left;
+        }
+        .left, .right{
+            background: red;
+            width: 130px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .triangle-left{
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-left: 15px solid red;
+            border-bottom: 15px solid transparent;
+        }
+        #triangle-topright {
+            width: 0;
+            height: 0;
+            border-top: 15px solid red;
+            border-left: 15px solid transparent;
+        }
+        #triangle-bottomright {
+            width: 0;
+            height: 0;
+            border-bottom: 15px solid red;
+            border-left: 15px solid transparent;
+        }
+        .jianwei{
+            width: 15px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        张三我是你爸爸
+    </div>
+    <div class="triangle-left"></div>
+    <div class="jianwei">
+        <div id="triangle-topright"></div>
+        <div id="triangle-bottomright"></div>
+    </div>
+    <div class="right">
+        张三我是你爸爸
+    </div>
+    <div class="triangle-left"></div>
+</body>
+</html>

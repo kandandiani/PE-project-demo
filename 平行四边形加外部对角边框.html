@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link href="https://cdn.bootcss.com/Swiper/4.3.0/css/swiper.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.0/js/swiper.min.js"></script>
+	<style>
+		.box {
+			margin: 100px 200px;
+			display: inline-block;
+			border: 1px solid #ddd;
+			transform: skew(-20deg);
+			padding: 20px;
+			position: relative;
+		}
+
+		.box::after,
+		.box::before {
+			position: absolute;
+			content: "";
+			width: 20px;
+			height: 20px;
+			background: white;
+		}
+
+		.box::after {
+			top: -2px;
+			right: -2px;
+		}
+
+		.box::before {
+			bottom: -2px;
+			left: -2px;
+		}
+
+		p {
+			display: inline-block;
+			padding: 20px 60px;
+			margin: 0px;
+			background: dodgerblue;
+		}
+
+		span {
+			display: inline-block;
+			transform: skew(20deg)
+		}
+	</style>
+</head>
+
+<body>
+	<div style="width:100%;">
+		<h1>平行四边形标题样式</h1>
+		<div class="box">
+			<p><span>移动电动车</span></p>
+		</div>
+	</div>
+</body>
+
+</html>

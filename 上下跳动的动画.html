@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      display: inline-block;
+    }
+
+    .goods {
+      width: 50%;
+      text-align: center;
+      margin: 50px auto;
+    }
+
+    .goods img {
+      animation: myfirst 1s infinite;
+    }
+
+    @keyframes myfirst {
+      0% {
+        transform: translate(0px, 0px);
+      }
+
+      50% {
+        transform: translate(0px, -10px);
+      }
+
+      100% {
+        transform: translate(0px, 0px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="goods">
+    <img src="http://hbimg.b0.upaiyun.com/b3a1b872b6f113c3a7c7c29daa642ea0b522cd03692dd-IRtCEk_fw658" />
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IntersectionObserver</title>
+  <style>
+    ul li {
+      display: inline-block;
+      width: 40%;
+      margin-right: 5%;
+      height: 30px;
+      background-color: aqua
+    }
+
+    ul li.show {
+      animation: left 1s ease;
+    }
+
+    ul li:nth-child(2n).show {
+      animation: right 1s ease;
+    }
+
+    @keyframes left {
+      from {
+        opacity: 0;
+        transform: translate(-20px, 20px);
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes right {
+      from {
+        opacity: 0;
+        transform: translate(20px, 20px);
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div style="height: 500px"></div>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <script>
+    let list = document.querySelectorAll("ul li");
+
+    let observer = new IntersectionObserver(entries => {
+      entries.forEach(item => {
+        if (item.isIntersecting) {
+          item.target.classList.add("show"); // 增加show类名
+          observer.unobserve(item.target); // 移除监听
+        }
+      });
+    });
+
+    list.forEach(item => observer.observe(item));
+  </script>
+</body>
+
+</html>

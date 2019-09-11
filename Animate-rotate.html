@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="external nofollow" rel="stylesheet" type="text/css">
+  <style>
+    .box {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: aqua;
+      margin: 0 auto;
+      transition: all 2s;
+    }
+
+    .box:hover {
+      animation: ani 2s linear infinite;
+    }
+
+    @keyframes ani {
+      0% {
+        transform: rotateX(0deg);
+      }
+
+      50% {
+        transform: rotateX(90deg);
+      }
+
+      100% {
+        transform: rotateX(0deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+
+  </div>
+</body>
+
+</html>
