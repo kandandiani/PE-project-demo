@@ -8,8 +8,10 @@
 
 <body>
     <div align="center" class="img_photo">
-        <img src="http://pre-bj-trace-image.oss-cn-beijing.aliyuncs.com/full/20180919/de963ab401235d894aaf100eb8f12bbd.jpg" width="250px" height="562px">
-        <img src="http://pre-bj-trace-image.oss-cn-beijing.aliyuncs.com/full/20180919/87ee27637fc789008ea782ce964be44e.jpg" width="250px" height="562px">
+        <img src="http://pre-bj-trace-image.oss-cn-beijing.aliyuncs.com/full/20180919/de963ab401235d894aaf100eb8f12bbd.jpg"
+            width="250px" height="562px">
+        <img src="http://pre-bj-trace-image.oss-cn-beijing.aliyuncs.com/full/20180919/87ee27637fc789008ea782ce964be44e.jpg"
+            width="250px" height="562px">
         <!-- <img src="http://pre-bj-trace-image.oss-cn-beijing.aliyuncs.com/full/20180919/f0d50c02c0f2b3f55846aa0183ce675e.jpg" width="250px" height="562px"> -->
         <!-- <img src="http://pre-bj-trace-image.oss-cn-beijing.aliyuncs.com/full/20180919/ad81e8d020345e7b0a1715e7a680fddb.jpg" width="250px" height="562px"> -->
     </div>
@@ -26,15 +28,16 @@
         const imageDiv = document.getElementById('image-container');
 
         uploadInput.addEventListener('click', event => {
-            const data1= new Array();
-            for(let i=0;i<$('.img_photo img').length;i++){
-                data1[i]=$('.img_photo img').eq(i).attr('src');
+            const data1 = new Array();
+            for (let i = 0; i < $('.img_photo img').length; i++) {
+                data1[i] = $('.img_photo img').eq(i).attr('src');
             }
-            filesToInstances(data1, function(instances) {
+            filesToInstances(data1, function (instances) {
                 console.log(instances)
-                drawImages(instances, function(finalImageUrl) {
+                drawImages(instances, function (finalImageUrl) {
                     console.log(instances)
-                    imageDiv.innerHTML = `<div><a download href=${finalImageUrl}>点击下载</a><br><img src=${finalImageUrl}></div>`
+                    imageDiv.innerHTML =
+                        `<div><a download href=${finalImageUrl}>点击下载</a><br><img src=${finalImageUrl}></div>`
                 })
             })
         })
@@ -48,19 +51,19 @@
 
             files.forEach((file, index) => {
                 console.log(file)
-                getBase64(file).then(function(base64){
+                getBase64(file).then(function (base64) {
                     let img = base64
                     const image = new Image()
                     image.src = img
                     image.onload = () => {
                         // 图片实例化成功后存起来
                         instances[index] = image
-                        finished ++
+                        finished++
                         if (finished === length) {
                             callback(instances)
                         }
                     }
-                },function(err){});
+                }, function (err) {});
                 // }
             })
         }
@@ -70,7 +73,10 @@
             console.log(images)
             const canvas = document.createElement('canvas')
             canvas.height = height;
-            const widths = images.map(item => {console.log(images.length); return 1000 / images.length });
+            const widths = images.map(item => {
+                console.log(images.length);
+                return 1000 / images.length
+            });
             console.log(widths)
             canvas.width = 1000;
             console.log(canvas.width)
@@ -86,26 +92,26 @@
             callback(canvas.toDataURL('image/jpeg', encoderOptions))
         }
         // 图片转base64
-        const getBase64 = (img) =>{
-            const getBase64Image = (img,width,height) => {//width、height调用时传入具体像素值，控制大小 ,不传则默认图像大小
-            let canvas = document.createElement("canvas");
-            canvas.width = width ? width : img.width;
-            canvas.height = height ? height : img.height;
-    
-            let ctx = canvas.getContext("2d");
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            let dataURL = canvas.toDataURL();
-            return dataURL;
+        const getBase64 = (img) => {
+            const getBase64Image = (img, width, height) => { //width、height调用时传入具体像素值，控制大小 ,不传则默认图像大小
+                let canvas = document.createElement("canvas");
+                canvas.width = width ? width : img.width;
+                canvas.height = height ? height : img.height;
+
+                let ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                let dataURL = canvas.toDataURL();
+                return dataURL;
             }
             let image = new Image();
             image.crossOrigin = '';
             image.src = img;
-            let deferred=$.Deferred();
-            if(img){
-            image.onload = () => {
-                deferred.resolve(getBase64Image(image));//将base64传给done上传处理
-            }
-            return deferred.promise();//问题要让onload完成后再return sessionStorage['imgTest']
+            let deferred = $.Deferred();
+            if (img) {
+                image.onload = () => {
+                    deferred.resolve(getBase64Image(image)); //将base64传给done上传处理
+                }
+                return deferred.promise(); //问题要让onload完成后再return sessionStorage['imgTest']
             }
         }
     </script>
