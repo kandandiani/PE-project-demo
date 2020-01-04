@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>该二维码支持中文和LOGO</title>
+
+  <script type="text/javascript" src="../jquery.min.js"></script>
+  <script type="text/javascript" src="./utf.js"></script>
+  <script type="text/javascript" src="./qrcode.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var str =
+        $("#qrcodeCanvas").qrcode({
+          render: "canvas",
+          text: 'https://s.m.taobao.com/h5?q=' + encodeURIComponent('韩国') +
+            '&ratesum=14,14&ppath=20509:28315;20509:28316;1627207:28334;1627207:28320;1627207:28335;1627207:28341',
+          width: "200", //二维码的宽度
+          height: "200", //二维码的高度
+          background: "#ffffff", //二维码的后景色
+          foreground: "#000000", //二维码的前景色
+          src: 'photo.jpg' //二维码中间的图片
+        });
+    });
+  </script>
+
+</head>
+
+<body>
+  <center>
+    <h2>该二维码支持中文和LOGO</h2>
+    <div id="qrcodeCanvas"></div>
+  </center>
+</body>
+
+</html>
