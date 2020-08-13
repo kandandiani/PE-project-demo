@@ -1,11 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  let title = response.potentiallyMaliciousInput;
+  // 直接使用是安全的：
+  let element = <h1>{title}</h1>;
   return (
     <div className="App">
       <header className="App-header">
+        {element}
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
