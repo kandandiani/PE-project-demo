@@ -1,0 +1,78 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-12-31 15:55:40
+ * @LastEditTime: 2020-12-31 15:59:16
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \PE-project-demo\文字两端对齐.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文字两端对齐</title>
+  <style>
+    li {
+      clear: both;
+      list-style: none;
+    }
+
+    label {
+      float: left;
+      overflow: hidden;
+      width: 79px;
+      /* // width: 80px; */
+      height: 30px;
+      display: inline-block;
+      line-height: 30px;
+      vertical-align: middle;
+      text-align: justify;
+      text-align-last: justify;
+    }
+
+    label::after {
+      content: '';
+      /* // display: inline-block; */
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="g-formlist">
+    <li>
+      <label class="mark">姓 名</label>
+      <div class="write">
+        <input type="text" id="form-name" class="g-text-entry" placeholder="请输入4-10字符" />
+        <span class="tip" data-initial="请输入4-10字符"></span>
+      </div>
+    </li>
+    <li>
+      <label class="mark">密 码</label>
+      <div class="write">
+        <input type="text" id="form-psw" class="g-text-entry" placeholder="请输入6-30字符" />
+        <span class="tip" data-initial="请输入6-30字符"></span>
+      </div>
+    </li>
+    <li>
+      <label class="mark">确 认 密 码</label>
+      <div class="write">
+        <input type="text" id="form-repsw" class="g-text-entry" placeholder="请再输入一遍密码" />
+        <span class="tip" data-initial="请输入6-30字符"></span>
+      </div>
+    </li>
+    <li>
+      <label class="mark">验 证 码</label>
+      <div class="write">
+        <input type="text" id="form-imgcode" class="g-text-entry disabled" disabled="disabled" placeholder="输入验证码" />
+        <span class="tip" data-initial="请输入验证码"></span>
+      </div>
+    </li>
+  </ul>
+
+
+</body>
+
+</html>
