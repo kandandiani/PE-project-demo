@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="txt1" value="abcde" onclick="getTxt1CursorPosition()">
+</body>
+<script>
+  function getTxt1CursorPosition() {
+    var oTxt1 = document.getElementById("txt1");
+    var cursurPosition = -1;
+    if (oTxt1.selectionStart) { //非IE浏览器
+      cursurPosition = oTxt1.selectionStart;
+    } else { //IE
+      var range = document.selection.createRange();
+      range.moveStart("character", -oTxt1.value.length);
+      cursurPosition = range.text.length;
+    }
+    alert(cursurPosition);
+  }
+</script>
+
+</script>
+
+</html>
